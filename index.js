@@ -16,9 +16,9 @@ app.get('/',(req,res)=>{
     res.send('hello to memories api')
 })
 
-//const CONNECTION_URL = 'mongodb+srv://unsorted_array:112411Sp@cluster0.yacbp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const CONNECTION_URL = 'mongodb+srv://unsorted_array:112411Sp@cluster0.yacbp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
-mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser: true})
+mongoose.connect(CONNECTION_URL,{useNewUrlParser: true})
 .then(()=>{
  app.listen(PORT , ()=>{console.log("server running on",PORT)})
 })
