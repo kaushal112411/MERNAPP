@@ -23,3 +23,10 @@ mongoose.connect(CONNECTION_URL,{useNewUrlParser: true})
  app.listen(PORT , ()=>{console.log("server running on",PORT)})
 })
 .catch((error)=>{console.log(error.message)});
+
+process.on('SIGTERM', () => {
+    console.log('SIGTERM received');
+    server.close(() => {
+         console.log('Process terminated');
+    });
+});
